@@ -151,10 +151,10 @@ OBJS_SSE2= obj/scrypt-sse2.o
 OBJS += $(OBJS_SSE2)
 endif
 
-all: litecoind
+all: PhoenixCoind
 
-test check: test_litecoin FORCE
-	./test_litecoin
+test check: test_PhoenixCoin FORCE
+	./test_PhoenixCoin
 
 #
 # LevelDB support
@@ -189,7 +189,7 @@ obj/%.o: %.cpp
 	      -e '/^$$/ d' -e 's/$$/ :/' < $(@:%.o=%.d) >> $(@:%.o=%.P); \
 	  rm -f $(@:%.o=%.d)
 
-litecoind: $(OBJS:obj/%=obj/%)
+PhoenixCoind: $(OBJS:obj/%=obj/%)
 	$(LINK) $(xCXXFLAGS) -o $@ $^ $(xLDFLAGS) $(LIBS)
 
 TESTOBJS := $(patsubst test/%.cpp,obj-test/%.o,$(wildcard test/*.cpp))
@@ -201,11 +201,11 @@ obj-test/%.o: test/%.cpp
 	      -e '/^$$/ d' -e 's/$$/ :/' < $(@:%.o=%.d) >> $(@:%.o=%.P); \
 	  rm -f $(@:%.o=%.d)
 
-test_litecoin: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
+test_PhoenixCoin: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
 	$(LINK) $(xCXXFLAGS) -o $@ $(LIBPATHS) $^ $(TESTLIBS) $(xLDFLAGS) $(LIBS)
 
 clean:
-	-rm -f litecoind test_litecoin
+	-rm -f PhoenixCoind test_PhoenixCoin
 	-rm -f obj/*.o
 	-rm -f obj-test/*.o
 	-rm -f obj/*.P

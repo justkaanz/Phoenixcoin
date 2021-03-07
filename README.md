@@ -11,8 +11,8 @@ What is PhoenixCoin?
 ----------------
 
 PhoenixCoin is a lite version of Bitcoin using scrypt as a proof-of-work algorithm.
- - 2.5 minute block targets
- - subsidy halves in 420k blocks (~2 years)
+ - 5 minute block targets
+ - subsidy halves in 1,26 million blocks
  - ~84 million total coins
 
 The rest is the same as Bitcoin.

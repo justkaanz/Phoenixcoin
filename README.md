@@ -54,6 +54,8 @@ requests than we can review and test. Please be patient and help out, and
 remember this is a security-critical project where any mistake might cost people
 lots of money.
 
+It is a crypto created for educational purposes. The name, design, block difficulty, and coin amount will be changed in future updates.
+
 ### Automated Testing
 
 Developers are strongly encouraged to write unit tests for new code, and to
